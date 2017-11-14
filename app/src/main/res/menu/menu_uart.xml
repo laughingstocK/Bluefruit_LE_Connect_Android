@@ -3,11 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.adafruit.bluefruit.le.connect.app.UartActivity">
 
-    <item
-        android:id="@+id/action_mqttsettings"
-        android:icon="@drawable/mqtt_disconnected"
-        android:title="@string/action_mqttsettings"
-        app:showAsAction="always" />
+    <!--<item-->
+        <!--android:id="@+id/action_mqttsettings"-->
+        <!--android:icon="@drawable/mqtt_disconnected"-->
+        <!--android:title="@string/action_mqttsettings"-->
+        <!--app:showAsAction="always" />-->
 
 
     <item
@@ -77,7 +77,7 @@
     </group>
 
 
-    <group android:id="@+id/extra">
+<!--     <group android:id="@+id/extra">
         <item
             android:id="@+id/action_connected_settings"
             android:icon="@drawable/ic_settings_white_24dp"
@@ -89,5 +89,5 @@
             android:title="@string/action_refreshcache"
             app:showAsAction="never" />
 
-    </group>
+    </group> -->
 </menu>

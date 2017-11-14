@@ -11,14 +11,14 @@
 
     tools:context=".app.MainActivity">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="40dp"
-        android:src="@drawable/adaflower"
-        tools:ignore="ContentDescription" />
+    <!--<ImageView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginBottom="40dp"-->
+        <!--android:src="@drawable/adaflower"-->
+        <!--tools:ignore="ContentDescription" />-->
 
     <Button
         android:id="@+id/scanButton"
@@ -50,144 +50,144 @@
             android:layout_height="wrap_content"
             android:background="#eeeeee">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:orientation="vertical">
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="8dp"-->
+                <!--android:orientation="vertical">-->
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="28dp"
-                    android:gravity="center_vertical"
-                    android:onClick="onClickExpandFilters"
-                    android:orientation="horizontal">
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="28dp"-->
+                    <!--android:gravity="center_vertical"-->
+                    <!--android:onClick="onClickExpandFilters"-->
+                    <!--android:orientation="horizontal">-->
 
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:gravity="center_vertical"-->
+                        <!--android:orientation="horizontal">-->
 
-                        <TextView
-                            android:id="@+id/filtersTitleTextView"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:singleLine="true"
-                            android:text="@string/scan_filters_title_nofilter"
-                            android:textStyle="bold" />
-
-
-                    </LinearLayout>
-
-                    <ImageButton
-                        android:id="@+id/filtersClearButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:onClick="onClickRemoveFilters"
-                        android:padding="5dp"
-                        android:src="@drawable/ic_cancel_black_18dp"
-                        tools:ignore="ContentDescription" />
-
-                    <ImageView
-                        android:id="@+id/filtersExpandImageView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:paddingLeft="4dp"
-                        android:paddingRight="4dp"
-                        android:src="@drawable/ic_expand_more_black_24dp"
-                        tools:ignore="ContentDescription" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/filtersExpansionView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="8dp"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="55dp"
-                            android:layout_height="wrap_content"
-                            android:text="@string/scan_filters_name_title" />
-
-                        <EditText
-                            android:id="@+id/filtersNameEditText"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:hint="@string/scan_filters_name_tip"
-                            android:singleLine="true"
-                            android:textAppearance="@android:style/TextAppearance.DeviceDefault" />
-                        <!--
-                        android:drawableStart="@drawable/ic_search_black_18dp"
-                        -->
-
-                        <ImageButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@android:color/transparent"
-                            android:onClick="onClickFilterNameSettings"
-                            android:paddingLeft="4dp"
-                            android:paddingRight="4dp"
-                            android:src="@drawable/ic_more_vert_black_24dp"
-                            tools:ignore="ContentDescription" />
-                    </LinearLayout>
+                        <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:id="@+id/filtersTitleTextView"&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:singleLine="true"&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:text="@string/scan_filters_title_nofilter"&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:textStyle="bold" />&ndash;&gt;-->
 
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="8dp"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
+                    <!--</LinearLayout>-->
 
-                        <TextView
-                            android:layout_width="55dp"
-                            android:layout_height="wrap_content"
-                            android:text="@string/scan_filters_rssi_title" />
+                    <!--&lt;!&ndash;<ImageButton&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:id="@+id/filtersClearButton"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:background="@android:color/transparent"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:onClick="onClickRemoveFilters"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:padding="5dp"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:src="@drawable/ic_cancel_black_18dp"&ndash;&gt;-->
+                        <!--&lt;!&ndash;tools:ignore="ContentDescription" />&ndash;&gt;-->
 
-                        <SeekBar
-                            android:id="@+id/filtersRssiSeekBar"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="-12dp"
-                            android:layout_weight="1"
-                            android:max="100" />
+                    <!--&lt;!&ndash;<ImageView&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:id="@+id/filtersExpandImageView"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:background="@android:color/transparent"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:paddingLeft="4dp"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:paddingRight="4dp"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:src="@drawable/ic_expand_more_black_24dp"&ndash;&gt;-->
+                        <!--&lt;!&ndash;tools:ignore="ContentDescription" />&ndash;&gt;-->
+                <!--</LinearLayout>-->
 
-                        <TextView
-                            android:id="@+id/filtersRssiValueTextView"
-                            android:layout_width="70dp"
-                            android:layout_height="wrap_content"
-                            android:text="@string/scan_filters_rssi_value_format" />
+                <!--<LinearLayout-->
+                    <!--android:id="@+id/filtersExpansionView"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginStart="8dp"-->
+                    <!--android:orientation="vertical">-->
 
-                    </LinearLayout>
+                    <!--&lt;!&ndash;<LinearLayout&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:layout_height="40dp"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:layout_marginStart="8dp"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:gravity="center_vertical"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:orientation="horizontal">&ndash;&gt;-->
 
-                    <CheckBox
-                        android:id="@+id/filtersUnnamedCheckBox"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:text="@string/scan_filters_unnamed" />
+                        <!--&lt;!&ndash;&lt;!&ndash;<TextView&ndash;&gt;&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;android:layout_width="55dp"&ndash;&gt;&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;android:text="@string/scan_filters_name_title" />&ndash;&gt;&ndash;&gt;-->
 
-                    <CheckBox
-                        android:id="@+id/filtersUartCheckBox"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:text="@string/scan_filters_onlyuart" />
-                </LinearLayout>
+                        <!--&lt;!&ndash;&lt;!&ndash;<EditText&ndash;&gt;&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;android:id="@+id/filtersNameEditText"&ndash;&gt;&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;android:layout_width="0dp"&ndash;&gt;&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;android:layout_weight="1"&ndash;&gt;&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;android:hint="@string/scan_filters_name_tip"&ndash;&gt;&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;android:singleLine="true"&ndash;&gt;&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;android:textAppearance="@android:style/TextAppearance.DeviceDefault" />&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:drawableStart="@drawable/ic_search_black_18dp"&ndash;&gt;-->
+                        <!--&lt;!&ndash;&ndash;&gt;&ndash;&gt;-->
+
+                        <!--&lt;!&ndash;&lt;!&ndash;<ImageButton&ndash;&gt;&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;android:background="@android:color/transparent"&ndash;&gt;&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;android:onClick="onClickFilterNameSettings"&ndash;&gt;&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;android:paddingLeft="4dp"&ndash;&gt;&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;android:paddingRight="4dp"&ndash;&gt;&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;android:src="@drawable/ic_more_vert_black_24dp"&ndash;&gt;&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;tools:ignore="ContentDescription" />&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;</LinearLayout>&ndash;&gt;-->
 
 
-            </LinearLayout>
+                    <!--&lt;!&ndash;<LinearLayout&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:layout_height="40dp"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:layout_marginStart="8dp"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:gravity="center_vertical"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:orientation="horizontal">&ndash;&gt;-->
+
+                        <!--&lt;!&ndash;&lt;!&ndash;<TextView&ndash;&gt;&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;android:layout_width="55dp"&ndash;&gt;&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;android:text="@string/scan_filters_rssi_title" />&ndash;&gt;&ndash;&gt;-->
+
+                        <!--&lt;!&ndash;&lt;!&ndash;<SeekBar&ndash;&gt;&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;android:id="@+id/filtersRssiSeekBar"&ndash;&gt;&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;android:layout_width="0dp"&ndash;&gt;&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;android:layout_marginStart="-12dp"&ndash;&gt;&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;android:layout_weight="1"&ndash;&gt;&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;android:max="100" />&ndash;&gt;&ndash;&gt;-->
+
+                        <!--&lt;!&ndash;&lt;!&ndash;<TextView&ndash;&gt;&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;android:id="@+id/filtersRssiValueTextView"&ndash;&gt;&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;android:layout_width="70dp"&ndash;&gt;&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;android:text="@string/scan_filters_rssi_value_format" />&ndash;&gt;&ndash;&gt;-->
+
+                    <!--&lt;!&ndash;</LinearLayout>&ndash;&gt;-->
+
+                    <!--&lt;!&ndash;<CheckBox&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:id="@+id/filtersUnnamedCheckBox"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:layout_height="40dp"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:text="@string/scan_filters_unnamed" />&ndash;&gt;-->
+
+                    <!--&lt;!&ndash;<CheckBox&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:id="@+id/filtersUartCheckBox"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:layout_height="40dp"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:text="@string/scan_filters_onlyuart" />&ndash;&gt;-->
+                <!--</LinearLayout>-->
+
+
+            <!--</LinearLayout>-->
         </FrameLayout>
 
         <android.support.v4.widget.SwipeRefreshLayout

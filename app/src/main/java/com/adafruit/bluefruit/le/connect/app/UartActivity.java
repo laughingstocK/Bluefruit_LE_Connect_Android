@@ -369,7 +369,7 @@ public class UartActivity extends UartInterfaceActivity implements MqttManager.M
         getMenuInflater().inflate(R.menu.menu_uart, menu);
 
         // Mqtt
-        mMqttMenuItem = menu.findItem(R.id.action_mqttsettings);
+        //mMqttMenuItem = menu.findItem(R.id.action_mqttsettings);
         mMqttMenuItemAnimationHandler = new Handler();
         mMqttMenuItemAnimationRunnable.run();
 
@@ -455,16 +455,16 @@ public class UartActivity extends UartInterfaceActivity implements MqttManager.M
                 startConnectedSettings();
                 return true;
 
-            case R.id.action_refreshcache:
-                if (mBleManager != null) {
-                    mBleManager.refreshDeviceCache();
-                }
-                break;
-
-            case R.id.action_mqttsettings:
-                Intent intent = new Intent(this, MqttUartSettingsActivity.class);
-                startActivityForResult(intent, kActivityRequestCode_MqttSettingsActivity);
-                break;
+            // case R.id.action_refreshcache:
+            //     if (mBleManager != null) {
+            //         mBleManager.refreshDeviceCache();
+            //     }
+            //     break;
+//
+//            case R.id.action_mqttsettings:
+//                Intent intent = new Intent(this, MqttUartSettingsActivity.class);
+//                startActivityForResult(intent, kActivityRequestCode_MqttSettingsActivity);
+//                break;
 
             case R.id.action_displaymode_timestamp:
                 setDisplayFormatToTimestamp(true);

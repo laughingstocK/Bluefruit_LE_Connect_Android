@@ -28,10 +28,8 @@ import android.support.annotation.NonNull;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.PopupMenu;
-import android.text.Editable;
 import android.text.Html;
 import android.text.Spanned;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -42,14 +40,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
-import android.widget.EditText;
 import android.widget.ExpandableListView;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ScrollView;
-import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -87,16 +80,11 @@ public class MainActivity extends AppCompatActivity implements BleManager.BleMan
     private static final int PERMISSION_REQUEST_FINE_LOCATION = 1;
 
     private final static String kPreferences = "MainActivity_prefs";
-    private final static String kPreferences_filtersPanelOpen = "filtersPanelOpen";
+//    private final static String kPreferences_filtersPanelOpen = "filtersPanelOpen";
 
     // Components
     private final static int kComponentsNameIds[] = {
-            R.string.scan_connectservice_info,
-            R.string.scan_connectservice_uart,
-            R.string.scan_connectservice_pinio,
-            R.string.scan_connectservice_controller,
-            R.string.scan_connectservice_beacon,
-            R.string.scan_connectservice_neopixel,
+            R.string.scan_connectservice_uart
     };
 
     // Activity request codes (used for onActivityResult)
@@ -114,15 +102,15 @@ public class MainActivity extends AppCompatActivity implements BleManager.BleMan
     private SwipeRefreshLayout mSwipeRefreshLayout;
 
     private AlertDialog mConnectingDialog;
-    private View mFiltersPanelView;
-    private ImageView mFiltersExpandImageView;
-    private ImageButton mFiltersClearButton;
-    private TextView mFiltersTitleTextView;
-    private EditText mFiltersNameEditText;
-    private SeekBar mFiltersRssiSeekBar;
-    private TextView mFiltersRssiValueTextView;
-    private CheckBox mFiltersUnnamedCheckBox;
-    private CheckBox mFiltersUartCheckBox;
+    //private View mFiltersPanelView;
+    //private ImageView mFiltersExpandImageView;
+    //private ImageButton mFiltersClearButton;
+    //private TextView mFiltersTitleTextView;
+    //private EditText mFiltersNameEditText;
+    //private SeekBar mFiltersRssiSeekBar;
+    //private TextView mFiltersRssiValueTextView;
+    //private CheckBox mFiltersUnnamedCheckBox;
+    //private CheckBox mFiltersUartCheckBox;
 
     // Data
     private BleManager mBleManager;
@@ -184,27 +172,27 @@ public class MainActivity extends AppCompatActivity implements BleManager.BleMan
         });
 
 
-        mFiltersPanelView = findViewById(R.id.filtersExpansionView);
-        mFiltersExpandImageView = (ImageView) findViewById(R.id.filtersExpandImageView);
-        mFiltersClearButton = (ImageButton) findViewById(R.id.filtersClearButton);
-        mFiltersTitleTextView = (TextView) findViewById(R.id.filtersTitleTextView);
-        mFiltersNameEditText = (EditText) findViewById(R.id.filtersNameEditText);
-        mFiltersNameEditText.addTextChangedListener(new TextWatcher() {
+        //mFiltersPanelView = findViewById(R.id.filtersExpansionView);
+        //mFiltersExpandImageView = (ImageView) findViewById(R.id.filtersExpandImageView);
+        //mFiltersClearButton = (ImageButton) findViewById(R.id.filtersClearButton);
+        //mFiltersTitleTextView = (TextView) findViewById(R.id.filtersTitleTextView);
+        //mFiltersNameEditText = (EditText) findViewById(R.id.filtersNameEditText);
+        //mFiltersNameEditText.addTextChangedListener(new TextWatcher() {
 
-            public void afterTextChanged(Editable s) {
+            /*public void afterTextChanged(Editable s) {
                 String text = s.toString();
                 mPeripheralList.setFilterName(text);
                 updateFilters();
-            }
+            }*/
 
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            }
+            /*public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }*/
 
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
+           /* public void onTextChanged(CharSequence s, int start, int before, int count) {
             }
-        });
-        mFiltersRssiSeekBar = (SeekBar) findViewById(R.id.filtersRssiSeekBar);
-        mFiltersRssiSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        });*/
+        //mFiltersRssiSeekBar = (SeekBar) findViewById(R.id.filtersRssiSeekBar);
+       /* mFiltersRssiSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 int rssiValue = -seekBar.getProgress();
@@ -223,33 +211,34 @@ public class MainActivity extends AppCompatActivity implements BleManager.BleMan
 
             }
         });
-        mFiltersRssiValueTextView = (TextView) findViewById(R.id.filtersRssiValueTextView);
-        mFiltersUnnamedCheckBox = (CheckBox) findViewById(R.id.filtersUnnamedCheckBox);
-        mFiltersUnnamedCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                mPeripheralList.setFilterUnnamedEnabled(isChecked);
-                updateFilters();
-            }
-        });
-        mFiltersUartCheckBox = (CheckBox) findViewById(R.id.filtersUartCheckBox);
-        mFiltersUartCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                mPeripheralList.setFilterOnlyUartEnabled(isChecked);
-                updateFilters();
-            }
-        });
+        */
+        //mFiltersRssiValueTextView = (TextView) findViewById(R.id.filtersRssiValueTextView);
+        //mFiltersUnnamedCheckBox = (CheckBox) findViewById(R.id.filtersUnnamedCheckBox);
+//        mFiltersUnnamedCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                mPeripheralList.setFilterUnnamedEnabled(isChecked);
+//                updateFilters();
+//            }
+//        });
+//        mFiltersUartCheckBox = (CheckBox) findViewById(R.id.filtersUartCheckBox);
+//        mFiltersUartCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                mPeripheralList.setFilterOnlyUartEnabled(isChecked);
+//                updateFilters();
+//            }
+//        });
 
         // Filters
         SharedPreferences preferences = getSharedPreferences(kPreferences, MODE_PRIVATE);
-        boolean filtersIsPanelOpen = preferences.getBoolean(kPreferences_filtersPanelOpen, false);
-        openFiltersPanel(filtersIsPanelOpen, false);
-        updateFiltersTitle();
-        mFiltersNameEditText.setText(mPeripheralList.getFilterName());
-        setRssiSliderValue(mPeripheralList.getFilterRssiValue());
-        mFiltersUnnamedCheckBox.setChecked(mPeripheralList.isFilterUnnamedEnabled());
-        mFiltersUartCheckBox.setChecked(mPeripheralList.isFilterOnlyUartEnabled());
+        //boolean filtersIsPanelOpen = preferences.getBoolean(kPreferences_filtersPanelOpen, false);
+        //openFiltersPanel(filtersIsPanelOpen, false);
+        //updateFiltersTitle();
+        //mFiltersNameEditText.setText(mPeripheralList.getFilterName());
+        //setRssiSliderValue(mPeripheralList.getFilterRssiValue());
+        //mFiltersUnnamedCheckBox.setChecked(mPeripheralList.isFilterUnnamedEnabled());
+        //mFiltersUartCheckBox.setChecked(mPeripheralList.isFilterOnlyUartEnabled());
 
         // Setup when activity is created for the first time
         if (savedInstanceState == null) {
@@ -467,37 +456,37 @@ public class MainActivity extends AppCompatActivity implements BleManager.BleMan
 
 
     // region Filters
-    private void openFiltersPanel(final boolean isOpen, boolean animated) {
-        SharedPreferences.Editor preferencesEditor = getSharedPreferences(kPreferences, MODE_PRIVATE).edit();
-        preferencesEditor.putBoolean(kPreferences_filtersPanelOpen, isOpen);
-        preferencesEditor.apply();
-
-        mFiltersExpandImageView.setImageResource(isOpen ? R.drawable.ic_expand_less_black_24dp : R.drawable.ic_expand_more_black_24dp);
-
-        /*
-        float paddingTop = MetricsUtils.convertDpToPixel(this, (float) (isOpen ? 200 : 44));
-        mScannedDevicesListView.setPadding(0, (int) paddingTop, 0, 0);
-
-        mFiltersPanelView.setVisibility(View.VISIBLE);
-        HeightAnimation heightAnim = new HeightAnimation(mFiltersPanelView, isOpen?0:200, isOpen?200:0);
-        heightAnim.setDuration(300);
-        mFiltersPanelView.startAnimation(heightAnim);
-*/
-
-        mFiltersPanelView.setVisibility(isOpen ? View.VISIBLE : View.GONE);
-
-        mFiltersPanelView.animate()
-                .alpha(isOpen ? 1.0f : 0)
-                .setDuration(300)
-                .setListener(new AnimatorListenerAdapter() {
-                    @Override
-                    public void onAnimationEnd(Animator animation) {
-                        super.onAnimationEnd(animation);
-                        mFiltersPanelView.setVisibility(isOpen ? View.VISIBLE : View.GONE);
-                    }
-                });
-
-    }
+//    private void openFiltersPanel(final boolean isOpen, boolean animated) {
+//        SharedPreferences.Editor preferencesEditor = getSharedPreferences(kPreferences, MODE_PRIVATE).edit();
+//        //preferencesEditor.putBoolean(kPreferences_filtersPanelOpen, isOpen);
+//        preferencesEditor.apply();
+//
+//        mFiltersExpandImageView.setImageResource(isOpen ? R.drawable.ic_expand_less_black_24dp : R.drawable.ic_expand_more_black_24dp);
+//
+//        /*
+//        float paddingTop = MetricsUtils.convertDpToPixel(this, (float) (isOpen ? 200 : 44));
+//        mScannedDevicesListView.setPadding(0, (int) paddingTop, 0, 0);
+//
+//        mFiltersPanelView.setVisibility(View.VISIBLE);
+//        HeightAnimation heightAnim = new HeightAnimation(mFiltersPanelView, isOpen?0:200, isOpen?200:0);
+//        heightAnim.setDuration(300);
+//        mFiltersPanelView.startAnimation(heightAnim);
+//*/
+//
+//        mFiltersPanelView.setVisibility(isOpen ? View.VISIBLE : View.GONE);
+//
+//        mFiltersPanelView.animate()
+//                .alpha(isOpen ? 1.0f : 0)
+//                .setDuration(300)
+//                .setListener(new AnimatorListenerAdapter() {
+//                    @Override
+//                    public void onAnimationEnd(Animator animation) {
+//                        super.onAnimationEnd(animation);
+//                        mFiltersPanelView.setVisibility(isOpen ? View.VISIBLE : View.GONE);
+//                    }
+//                });
+//
+//    }
 /*
     public class HeightAnimation extends Animation {
         protected final int originalHeight;
@@ -522,80 +511,80 @@ public class MainActivity extends AppCompatActivity implements BleManager.BleMan
         }
     }*/
 
-    public void onClickExpandFilters(View view) {
-        SharedPreferences preferences = getSharedPreferences(kPreferences, MODE_PRIVATE);
-        boolean filtersIsPanelOpen = preferences.getBoolean(kPreferences_filtersPanelOpen, false);
+//     public void onClickExpandFilters(View view) {
+//         SharedPreferences preferences = getSharedPreferences(kPreferences, MODE_PRIVATE);
+//         boolean filtersIsPanelOpen = preferences.getBoolean(kPreferences_filtersPanelOpen, false);
 
-        openFiltersPanel(!filtersIsPanelOpen, true);
-    }
+//         openFiltersPanel(!filtersIsPanelOpen, true);
+//     }
 
-    public void onClickRemoveFilters(View view) {
-        mPeripheralList.setDefaultFilters();
-        mFiltersNameEditText.setText(mPeripheralList.getFilterName());
-        setRssiSliderValue(mPeripheralList.getFilterRssiValue());
-        mFiltersUnnamedCheckBox.setChecked(mPeripheralList.isFilterUnnamedEnabled());
-        mFiltersUartCheckBox.setChecked(mPeripheralList.isFilterOnlyUartEnabled());
-        updateFilters();
-    }
+// //    public void onClickRemoveFilters(View view) {
+// //        mPeripheralList.setDefaultFilters();
+// //        mFiltersNameEditText.setText(mPeripheralList.getFilterName());
+// //        setRssiSliderValue(mPeripheralList.getFilterRssiValue());
+// //        mFiltersUnnamedCheckBox.setChecked(mPeripheralList.isFilterUnnamedEnabled());
+// //        mFiltersUartCheckBox.setChecked(mPeripheralList.isFilterOnlyUartEnabled());
+// //        updateFilters();
+// //    }
 
-    public void onClickFilterNameSettings(View view) {
-        PopupMenu popup = new PopupMenu(this, view);
-        popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                boolean processed = true;
-                switch (item.getItemId()) {
-                    case R.id.scanfilter_name_contains:
-                        mPeripheralList.setFilterNameExact(false);
-                        break;
-                    case R.id.scanfilter_name_exact:
-                        mPeripheralList.setFilterNameExact(true);
-                        break;
-                    case R.id.scanfilter_name_sensitive:
-                        mPeripheralList.setFilterNameCaseInsensitive(false);
-                        break;
-                    case R.id.scanfilter_name_insensitive:
-                        mPeripheralList.setFilterNameCaseInsensitive(true);
-                        break;
-                    default:
-                        processed = false;
-                        break;
-                }
-                updateFilters();
-                return processed;
-            }
-        });
-        MenuInflater inflater = popup.getMenuInflater();
-        Menu menu = popup.getMenu();
-        inflater.inflate(R.menu.menu_scan_filters_name, menu);
-        final boolean isFilterNameExact = mPeripheralList.isFilterNameExact();
-        menu.findItem(isFilterNameExact ? R.id.scanfilter_name_exact : R.id.scanfilter_name_contains).setChecked(true);
-        final boolean isFilterNameCaseInsensitive = mPeripheralList.isFilterNameCaseInsensitive();
-        menu.findItem(isFilterNameCaseInsensitive ? R.id.scanfilter_name_insensitive : R.id.scanfilter_name_sensitive).setChecked(true);
-        popup.show();
-    }
+//    public void onClickFilterNameSettings(View view) {
+//        PopupMenu popup = new PopupMenu(this, view);
+//        popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+//            @Override
+//            public boolean onMenuItemClick(MenuItem item) {
+//                boolean processed = true;
+//                switch (item.getItemId()) {
+//                    case R.id.scanfilter_name_contains:
+//                        mPeripheralList.setFilterNameExact(false);
+//                        break;
+//                    case R.id.scanfilter_name_exact:
+//                        mPeripheralList.setFilterNameExact(true);
+//                        break;
+//                    case R.id.scanfilter_name_sensitive:
+//                        mPeripheralList.setFilterNameCaseInsensitive(false);
+//                        break;
+//                    case R.id.scanfilter_name_insensitive:
+//                        mPeripheralList.setFilterNameCaseInsensitive(true);
+//                        break;
+//                    default:
+//                        processed = false;
+//                        break;
+//                }
+//                updateFilters();
+//                return processed;
+//            }
+//        });
+//        MenuInflater inflater = popup.getMenuInflater();
+//        Menu menu = popup.getMenu();
+//        //inflater.inflate(R.menu.menu_scan_filters_name, menu);
+//        //final boolean isFilterNameExact = mPeripheralList.isFilterNameExact();
+//        //menu.findItem(isFilterNameExact ? R.id.scanfilter_name_exact : R.id.scanfilter_name_contains).setChecked(true);
+//        //final boolean isFilterNameCaseInsensitive = mPeripheralList.isFilterNameCaseInsensitive();
+//        //menu.findItem(isFilterNameCaseInsensitive ? R.id.scanfilter_name_insensitive : R.id.scanfilter_name_sensitive).setChecked(true);
+//        popup.show();
+//    }
 
 
-    private void updateFiltersTitle() {
-        final String filtersTitle = mPeripheralList.filtersDescription();
-        mFiltersTitleTextView.setText(filtersTitle != null ? String.format(Locale.ENGLISH, getString(R.string.scan_filters_title_filter_format), filtersTitle) : getString(R.string.scan_filters_title_nofilter));
-        mFiltersClearButton.setVisibility(mPeripheralList.isAnyFilterEnabled() ? View.VISIBLE : View.GONE);
-    }
+//    private void updateFiltersTitle() {
+//        final String filtersTitle = mPeripheralList.filtersDescription();
+//        mFiltersTitleTextView.setText(filtersTitle != null ? String.format(Locale.ENGLISH, getString(R.string.scan_filters_title_filter_format), filtersTitle) : getString(R.string.scan_filters_title_nofilter));
+//        mFiltersClearButton.setVisibility(mPeripheralList.isAnyFilterEnabled() ? View.VISIBLE : View.GONE);
+//    }
 
-    private void updateFilters() {
-        updateFiltersTitle();
-        mScannedDevicesAdapter.notifyDataSetChanged();
-    }
+//    private void updateFilters() {
+//        //updateFiltersTitle();
+//        mScannedDevicesAdapter.notifyDataSetChanged();
+//    }
 
-    private void setRssiSliderValue(int value) {
-        mFiltersRssiSeekBar.setProgress(-value);
-        updateRssiValue();
-    }
+//    private void setRssiSliderValue(int value) {
+//        mFiltersRssiSeekBar.setProgress(-value);
+//        updateRssiValue();
+//    }
 
-    private void updateRssiValue() {
-        final int value = -mFiltersRssiSeekBar.getProgress();
-        mFiltersRssiValueTextView.setText(String.format(Locale.ENGLISH, getString(R.string.scan_filters_rssi_value_format), value));
-    }
+//    private void updateRssiValue() {
+//        final int value = -mFiltersRssiSeekBar.getProgress();
+//        mFiltersRssiValueTextView.setText(String.format(Locale.ENGLISH, getString(R.string.scan_filters_rssi_value_format), value));
+//    }
 
     // endregion
 
@@ -606,54 +595,54 @@ public class MainActivity extends AppCompatActivity implements BleManager.BleMan
         }
     }
 
-    private void showChooseDeviceServiceDialog(final BluetoothDeviceData deviceData) {
-        // Prepare dialog
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        String title = String.format(getString(R.string.scan_connectto_dialog_title_format), deviceData.getNiceName());
-        String[] items = new String[kComponentsNameIds.length];
-        for (int i = 0; i < kComponentsNameIds.length; i++)
-            items[i] = getString(kComponentsNameIds[i]);
-
-        builder.setTitle(title)
-                .setItems(items, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        switch (kComponentsNameIds[which]) {
-                            case R.string.scan_connectservice_info: {          // Info
-                                mComponentToStartWhenConnected = InfoActivity.class;
-                                break;
-                            }
-                            case R.string.scan_connectservice_uart: {           // Uart
-                                mComponentToStartWhenConnected = UartActivity.class;
-                                break;
-                            }
-                            case R.string.scan_connectservice_pinio: {        // PinIO
-                                mComponentToStartWhenConnected = PinIOActivity.class;
-                                break;
-                            }
-                            case R.string.scan_connectservice_controller: {    // Controller
-                                mComponentToStartWhenConnected = ControllerActivity.class;
-                                break;
-                            }
-                            case R.string.scan_connectservice_beacon: {        // Beacon
-                                mComponentToStartWhenConnected = BeaconActivity.class;
-                                break;
-                            }
-                            case R.string.scan_connectservice_neopixel: {       // Neopixel
-                                mComponentToStartWhenConnected = NeopixelActivity.class;
-                                break;
-                            }
-                        }
-
-                        if (mComponentToStartWhenConnected != null) {
-                            connect(deviceData.device);            // First connect to the device, and when connected go to selected activity
-                        }
-                    }
-                });
-
-        // Show dialog
-        AlertDialog dialog = builder.create();
-        dialog.show();
-    }
+//    private void showChooseDeviceServiceDialog(final BluetoothDeviceData deviceData) {
+//        // Prepare dialog
+//        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//        String title = String.format(getString(R.string.scan_connectto_dialog_title_format), deviceData.getNiceName());
+//        String[] items = new String[kComponentsNameIds.length];
+//        for (int i = 0; i < kComponentsNameIds.length; i++)
+//            items[i] = getString(kComponentsNameIds[i]);
+//
+//        builder.setTitle(title)
+//                .setItems(items, new DialogInterface.OnClickListener() {
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        switch (kComponentsNameIds[which]) {
+//                            case R.string.scan_connectservice_info: {          // Info
+//                                mComponentToStartWhenConnected = InfoActivity.class;
+//                                break;
+//                            }
+//                            case R.string.scan_connectservice_uart: {           // Uart
+//                                mComponentToStartWhenConnected = UartActivity.class;
+//                                break;
+//                            }
+//                            case R.string.scan_connectservice_pinio: {        // PinIO
+//                                mComponentToStartWhenConnected = PinIOActivity.class;
+//                                break;
+//                            }
+//                            case R.string.scan_connectservice_controller: {    // Controller
+//                                mComponentToStartWhenConnected = ControllerActivity.class;
+//                                break;
+//                            }
+//                            case R.string.scan_connectservice_beacon: {        // Beacon
+//                                mComponentToStartWhenConnected = BeaconActivity.class;
+//                                break;
+//                            }
+//                            case R.string.scan_connectservice_neopixel: {       // Neopixel
+//                                mComponentToStartWhenConnected = NeopixelActivity.class;
+//                                break;
+//                            }
+//                        }
+//
+//                        if (mComponentToStartWhenConnected != null) {
+//                            connect(deviceData.device);            // First connect to the device, and when connected go to selected activity
+//                        }
+//                    }
+//                });
+//
+//        // Show dialog
+//        AlertDialog dialog = builder.create();
+//        dialog.show();
+//    }
 
     private boolean manageBluetoothAvailability() {
         boolean isEnabled = true;
@@ -827,6 +816,7 @@ public class MainActivity extends AppCompatActivity implements BleManager.BleMan
 
     public void onClickDeviceConnect(int scannedDeviceIndex) {
         stopScanning();
+        //connect(device);
 
         ArrayList<BluetoothDeviceData> filteredPeripherals = mPeripheralList.filteredPeripherals(false);
         if (scannedDeviceIndex < filteredPeripherals.size()) {
@@ -836,7 +826,10 @@ public class MainActivity extends AppCompatActivity implements BleManager.BleMan
             mBleManager.setBleListener(MainActivity.this);           // Force set listener (could be still checking for updates...)
 
             if (mSelectedDeviceData.type == BluetoothDeviceData.kType_Uart) {      // if is uart, show all the available activities
-                showChooseDeviceServiceDialog(mSelectedDeviceData);
+                //showChooseDeviceServiceDialog(mSelectedDeviceData);
+                //mComponentToStartWhenConnected = UartActivity.class;
+                mComponentToStartWhenConnected = UartActivity.class;
+                connect(device);
             } else {                          // if no uart, then go directly to info
                 Log.d(TAG, "No UART service found. Go to InfoActivity");
                 mComponentToStartWhenConnected = InfoActivity.class;
@@ -1387,92 +1380,92 @@ public class MainActivity extends AppCompatActivity implements BleManager.BleMan
             mIsOnlyUartEnabled = preferences.getBoolean(kPreferences_filtersUartEnabled, false);
         }
 
-        String getFilterName() {
-            return mFilterName;
-        }
+//        String getFilterName() {
+//            return mFilterName;
+//        }
+//
+//        void setFilterName(String name) {
+//            mFilterName = name;
+//            mIsFilterDirty = true;
+//
+//            preferencesEditor.putString(kPreferences_filtersName, name);
+//            preferencesEditor.apply();
+//        }
 
-        void setFilterName(String name) {
-            mFilterName = name;
-            mIsFilterDirty = true;
-
-            preferencesEditor.putString(kPreferences_filtersName, name);
-            preferencesEditor.apply();
-        }
-
-        boolean isFilterNameExact() {
-            return mIsFilterNameExact;
-        }
-
-        void setFilterNameExact(boolean exact) {
-            mIsFilterNameExact = exact;
-            mIsFilterDirty = true;
-
-            preferencesEditor.putBoolean(kPreferences_filtersIsNameExact, exact);
-            preferencesEditor.apply();
-        }
-
-        boolean isFilterNameCaseInsensitive() {
-            return mIsFilterNameCaseInsensitive;
-        }
-
-        void setFilterNameCaseInsensitive(boolean caseInsensitive) {
-            mIsFilterNameCaseInsensitive = caseInsensitive;
-            mIsFilterDirty = true;
-
-            preferencesEditor.putBoolean(kPreferences_filtersIsNameCaseInsensitive, caseInsensitive);
-            preferencesEditor.apply();
-        }
-
-        int getFilterRssiValue() {
-            return mRssiFilterValue;
-        }
-
-        void setFilterRssiValue(int value) {
-            mRssiFilterValue = value;
-            mIsFilterDirty = true;
-
-            preferencesEditor.putInt(kPreferences_filtersRssi, value);
-            preferencesEditor.apply();
-        }
-
-        boolean isFilterUnnamedEnabled() {
-            return mIsUnnamedEnabled;
-        }
-
-        void setFilterUnnamedEnabled(boolean enabled) {
-            mIsUnnamedEnabled = enabled;
-            mIsFilterDirty = true;
-
-            preferencesEditor.putBoolean(kPreferences_filtersUnnamedEnabled, enabled);
-            preferencesEditor.apply();
-        }
-
-
-        boolean isFilterOnlyUartEnabled() {
-            return mIsOnlyUartEnabled;
-        }
-
-        void setFilterOnlyUartEnabled(boolean enabled) {
-            mIsOnlyUartEnabled = enabled;
-            mIsFilterDirty = true;
-
-            preferencesEditor.putBoolean(kPreferences_filtersUartEnabled, enabled);
-            preferencesEditor.apply();
-        }
-
-
-        void setDefaultFilters() {
-            mFilterName = null;
-            mIsFilterNameExact = false;
-            mIsFilterNameCaseInsensitive = true;
-            mRssiFilterValue = kMaxRssiValue;
-            mIsUnnamedEnabled = true;
-            mIsOnlyUartEnabled = false;
-        }
-
-        boolean isAnyFilterEnabled() {
-            return (mFilterName != null && !mFilterName.isEmpty()) || mRssiFilterValue > kMaxRssiValue || mIsOnlyUartEnabled || !mIsUnnamedEnabled;
-        }
+//        boolean isFilterNameExact() {
+//            return mIsFilterNameExact;
+//        }
+//
+//        void setFilterNameExact(boolean exact) {
+//            mIsFilterNameExact = exact;
+//            mIsFilterDirty = true;
+//
+//            preferencesEditor.putBoolean(kPreferences_filtersIsNameExact, exact);
+//            preferencesEditor.apply();
+//        }
+//
+//        boolean isFilterNameCaseInsensitive() {
+//            return mIsFilterNameCaseInsensitive;
+//        }
+//
+//        void setFilterNameCaseInsensitive(boolean caseInsensitive) {
+//            mIsFilterNameCaseInsensitive = caseInsensitive;
+//            mIsFilterDirty = true;
+//
+//            preferencesEditor.putBoolean(kPreferences_filtersIsNameCaseInsensitive, caseInsensitive);
+//            preferencesEditor.apply();
+//        }
+//
+//        int getFilterRssiValue() {
+//            return mRssiFilterValue;
+//        }
+//
+//        void setFilterRssiValue(int value) {
+//            mRssiFilterValue = value;
+//            mIsFilterDirty = true;
+//
+//            preferencesEditor.putInt(kPreferences_filtersRssi, value);
+//            preferencesEditor.apply();
+//        }
+//
+//        boolean isFilterUnnamedEnabled() {
+//            return mIsUnnamedEnabled;
+//        }
+//
+//        void setFilterUnnamedEnabled(boolean enabled) {
+//            mIsUnnamedEnabled = enabled;
+//            mIsFilterDirty = true;
+//
+//            preferencesEditor.putBoolean(kPreferences_filtersUnnamedEnabled, enabled);
+//            preferencesEditor.apply();
+//        }
+//
+//
+//        boolean isFilterOnlyUartEnabled() {
+//            return mIsOnlyUartEnabled;
+//        }
+//
+//        void setFilterOnlyUartEnabled(boolean enabled) {
+//            mIsOnlyUartEnabled = enabled;
+//            mIsFilterDirty = true;
+//
+//            preferencesEditor.putBoolean(kPreferences_filtersUartEnabled, enabled);
+//            preferencesEditor.apply();
+//        }
+//
+//
+//        void setDefaultFilters() {
+//            mFilterName = null;
+//            mIsFilterNameExact = false;
+//            mIsFilterNameCaseInsensitive = true;
+//            mRssiFilterValue = kMaxRssiValue;
+//            mIsUnnamedEnabled = true;
+//            mIsOnlyUartEnabled = true;
+//        }
+//
+//        boolean isAnyFilterEnabled() {
+//            return (mFilterName != null && !mFilterName.isEmpty()) || mRssiFilterValue > kMaxRssiValue || mIsOnlyUartEnabled || !mIsUnnamedEnabled;
+//        }
 
         ArrayList<BluetoothDeviceData> filteredPeripherals(boolean forceUpdate) {
             if (mIsFilterDirty || forceUpdate) {
@@ -1546,42 +1539,42 @@ public class MainActivity extends AppCompatActivity implements BleManager.BleMan
             return peripherals;
         }
 
-        String filtersDescription() {
-            String filtersTitle = null;
-
-            if (mFilterName != null && !mFilterName.isEmpty()) {
-                filtersTitle = mFilterName;
-            }
-
-            if (mRssiFilterValue > kMaxRssiValue) {
-                String rssiString = String.format(Locale.ENGLISH, getString(R.string.scan_filters_name_rssi_format), mRssiFilterValue);
-                if (filtersTitle != null && !filtersTitle.isEmpty()) {
-                    filtersTitle = filtersTitle + ", " + rssiString;
-                } else {
-                    filtersTitle = rssiString;
-                }
-            }
-
-            if (!mIsUnnamedEnabled) {
-                String namedString = getString(R.string.scan_filters_name_named);
-                if (filtersTitle != null && !filtersTitle.isEmpty()) {
-                    filtersTitle = filtersTitle + ", " + namedString;
-                } else {
-                    filtersTitle = namedString;
-                }
-            }
-
-            if (mIsOnlyUartEnabled) {
-                String uartString = getString(R.string.scan_filters_name_uart);
-                if (filtersTitle != null && !filtersTitle.isEmpty()) {
-                    filtersTitle = filtersTitle + ", " + uartString;
-                } else {
-                    filtersTitle = uartString;
-                }
-            }
-
-            return filtersTitle;
-        }
+//        String filtersDescription() {
+//            String filtersTitle = null;
+//
+//            if (mFilterName != null && !mFilterName.isEmpty()) {
+//                filtersTitle = mFilterName;
+//            }
+//
+//            if (mRssiFilterValue > kMaxRssiValue) {
+//                String rssiString = String.format(Locale.ENGLISH, getString(R.string.scan_filters_name_rssi_format), mRssiFilterValue);
+//                if (filtersTitle != null && !filtersTitle.isEmpty()) {
+//                    filtersTitle = filtersTitle + ", " + rssiString;
+//                } else {
+//                    filtersTitle = rssiString;
+//                }
+//            }
+//
+//            if (!mIsUnnamedEnabled) {
+//                String namedString = getString(R.string.scan_filters_name_named);
+//                if (filtersTitle != null && !filtersTitle.isEmpty()) {
+//                    filtersTitle = filtersTitle + ", " + namedString;
+//                } else {
+//                    filtersTitle = namedString;
+//                }
+//            }
+//
+//            if (mIsOnlyUartEnabled) {
+//                String uartString = getString(R.string.scan_filters_name_uart);
+//                if (filtersTitle != null && !filtersTitle.isEmpty()) {
+//                    filtersTitle = filtersTitle + ", " + uartString;
+//                } else {
+//                    filtersTitle = uartString;
+//                }
+//            }
+//
+//            return filtersTitle;
+//        }
     }
 
     // endregion
