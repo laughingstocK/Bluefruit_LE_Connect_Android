@@ -1456,7 +1456,7 @@ public class MainActivity extends AppCompatActivity implements BleManager.BleMan
 
             // We don't expect many items so for clarity just find the views each time instead of using a ViewHolder
             //TextView textView = (TextView) convertView.findViewById(R.id.dataTextView);
-            Spanned text = getChild(groupPosition, childPosition);
+//            Spanned text = getChild(groupPosition, childPosition);
 //            textView.setText(text);
 
             //Button rawDataButton = (Button) convertView.findViewById(R.id.rawDataButton);
